@@ -12,12 +12,11 @@
 #import <Foundation/Foundation.h>
 #import <XCTest/XCTest.h>
 
-#import <HCACallEngine/HCACallEngine.h>
-#import <HomeCenterXMPP/HomeCenterXMPP.h>
-#import <HCACallEngine/HCACallJingleCantroller+Internal.h>
-
 #import <OCMock/OCMock.h>
 #import "HCATestNetworkProtocolRelayAdapter.h"
+
+@import HCACallEngine;
+@import HomeCenterXMPP;
 
 @interface HCACallJingleControllerTests : XCTestCase <HCACallCantrollerListener>
 

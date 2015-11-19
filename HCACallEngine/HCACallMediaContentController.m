@@ -8,8 +8,6 @@
 
 #import "HCACallMediaContentController.h"
 
-#import <HomeCenterXMPP/HomeCenterXMPP.h>
-
 #import "JinglePhone.h"
 #import "AudioSessionManager.h"
 
@@ -17,6 +15,12 @@
 #import "LinphoneVoiceEngine.h"
 
 #import "HCACallInfo.h"
+
+@import HomeCenterXMPP;
+
+#if !__has_feature(objc_arc)
+#error "ARC is required"
+#endif
 
 #ifdef DEBUG
 static const int ddLogLevel = LOG_LEVEL_VERBOSE;
@@ -84,7 +88,7 @@ static const int ddLogLevel = LOG_LEVEL_WARN;
 {
     if (!(callInfo.callOptions & HCACallOptionVideoDisabled) || !enabled)
     {
-        [self.mediaEngine toggleVideoPreview:enabled];
+        [self.mediaEngine toggleVideoPreview:enabled withPreviewMode:ME_PREVIEW_VIDEO_CALL];
     }
 }
 
@@ -236,11 +240,11 @@ static const int ddLogLevel = LOG_LEVEL_WARN;
              switch (cameraPosition)
              {
                  case AVCaptureDevicePositionFront:
-                     result = [self.mediaEngine useFrontCamera];
+                     [self.mediaEngine useFrontCamera];
                      break;
                      
                  case AVCaptureDevicePositionBack:
-                     result = [self.mediaEngine useBackCamera];
+                     [self.mediaEngine useBackCamera];
                      break;
                      
                  default:

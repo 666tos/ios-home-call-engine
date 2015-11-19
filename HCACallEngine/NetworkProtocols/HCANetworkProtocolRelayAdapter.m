@@ -8,7 +8,11 @@
 
 #import "HCANetworkProtocolRelayAdapter.h"
 
-#import <HomeCenterXMPP/HomeCenterXMPP.h>
+@import HomeCenterXMPP;
+
+#if !__has_feature(objc_arc)
+#error "ARC is required"
+#endif
 
 @interface HCANetworkProtocolRelayAdapter () <XMPPJingleRelayNodesDelegate>
 

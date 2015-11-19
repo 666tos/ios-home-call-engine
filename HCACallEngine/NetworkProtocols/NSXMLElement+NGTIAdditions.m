@@ -29,7 +29,6 @@
 
 
 #import <Foundation/Foundation.h>
-#import <HomeCenterXMPP/HomeCenterXMPP.h>
 
 #import "NSXMLElement+NGTIAdditions.h"
 
@@ -39,9 +38,10 @@
 //#import "DateTimeUtils.h"
 #import "XMPPStrings.h"
 #import "NSStringExtended.h"
-#import "NSString+HCAUtils.h"
 //#import "NSString+MKNetworkKitAdditions.h"
 
+@import HCAUtils;
+@import HomeCenterXMPP;
 
 NSString *const XMPP_ERROR = @"ERROR";
 NSString *const XMPP_IQ = @"IQ";

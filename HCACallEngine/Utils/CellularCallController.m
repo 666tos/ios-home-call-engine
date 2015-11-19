@@ -11,6 +11,10 @@
 #import <CoreTelephony/CTCall.h>
 #import <CoreTelephony/CTCallCenter.h>
 
+#if !__has_feature(objc_arc) 
+#error "ARC is required" 
+#endif
+
 @interface CellularCallController()
 
 @property (strong, nonatomic) CTCallCenter *ctCallCenter;

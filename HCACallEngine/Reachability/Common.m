@@ -18,12 +18,12 @@
 }
 @end
 
+static IPhoneLogger *logger = nil;
+
 @implementation IPhoneLogger
 
 + (IPhoneLogger *)instance
 {
-    static IPhoneLogger *logger = nil;
-
     if (logger == nil)
     {
         logger = [[IPhoneLogger alloc] initWithComponents:(LogComponent)ENABLED_LOG_COMPONENTS, (LogComponent)0];
@@ -58,13 +58,6 @@
 
     return self;
 }
-
-
-- (void)dealloc
-{
-    [super dealloc];
-}
-
 
 - (void)enableLogFor:(LogComponent)component
 {

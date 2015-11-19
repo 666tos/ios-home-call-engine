@@ -6,6 +6,34 @@
 //  Copyright (c) 2012 NGT International B.V. All rights reserved.
 //
 
+
+#define kTagNameDelay                  @"delay"
+#define kTagNameError                  @"error"
+#define kTagNameInternalServerError    @"internal-server-error"
+#define kTagNameNotAllowed             @"not-allowed"
+#define kTagNameItemNotFound           @"item-not-found"
+#define kTagNameForbidden              @"forbidden"
+#define kTagNameBadRequest             @"bad-request"
+
+#define kAttributeId                   @"id"
+#define kAttributeType                 @"type"
+#define kAttributeStamp                @"stamp"
+#define kAttributeCode                 @"code"
+#define kAttributeFrom                 @"from"
+#define kAttributeTo                   @"to"
+
+#define kValueGet                      @"get"
+#define kValueSet                      @"set"
+#define kValueResult                   @"result"
+#define kValueError                    @"error"
+
+#define kValueCancel                   @"cancel"
+#define kValueAdd                      @"add"
+#define kValueWait                     @"wait"
+#define kValueModify                   @"modify"
+#define kValueAuth                     @"auth"
+
+
 #define kValueSessionTerminate         @"session-terminate"
 #define kValueSessionAccept            @"session-accept"
 
@@ -18,7 +46,6 @@
 #define kTagNamePresence               @"presence"
 #define kTagNameQuery                  @"query"
 #define kTagNameX                      @"x"
-#define kTagNameDelay                  @"delay"
 #define kTagNameField                  @"field"
 #define kTagNameValue                  @"value"
 #define kTagNameRp                     @"rp"
@@ -38,14 +65,13 @@
 #define kTagNameOption                 @"option"
 #define kTagNameDesc                   @"desc"
 #define kTagNameAvatar                 @"avatar"
-#define kTagNameError                  @"error"
-#define kTagNameInternalServerError    @"internal-server-error"
-#define kTagNameNotAllowed             @"not-allowed"
 #define kTagNameGeoloc                 @"location"
 #define kTagNameIgnored                @"ignored"
 #define kTagNameInfo                   @"info"
 #define kTagNameLat                    @"lat"
 #define kTagNameLon                    @"lon"
+#define kTagNameText                   @"text"
+#define kTagNameZoomLevel              @"zoomlevel"
 #define kTagNameList                   @"list"
 #define kTagNameName                   @"name"
 #define kTagNameOS                     @"os"
@@ -54,13 +80,11 @@
 #define kTagNameType                   @"type"
 #define kTagNameGet                    @"get"
 #define kTagNameForward                @"forward"
+#define kTagNameForwarded              @"forwarded"
 #define kTagNameTo                     @"to"
 #define kTagNameGetFile                @"getfile"
 #define kTagNameAddresses              @"addresses"
 #define kTagNameAddress                @"address"
-#define kTagNameItemNotFound           @"item-not-found"
-#define kTagNameForbidden              @"forbidden"
-#define kTagNameBadRequest             @"bad-request"
 #define kTagNameToken                  @"token"
 #define kTagNameItem                   @"item"
 #define kTagNameGroup                  @"group"
@@ -89,6 +113,7 @@
 #define kTagNameCategory               @"category"
 #define kTagNameShow                   @"show"
 #define kTagNameSubject                @"subject"
+#define kTagNamePing                   @"ping"
 #define kTagNamePriority               @"priority"
 #define kTagNameStatus                 @"status"
 #define kTagNameNick                   @"nick"
@@ -100,8 +125,6 @@
 #define kTagNameSent                   @"sent"
 #define kTagNameUsername               @"username"
 #define kTagNamePassword               @"password"
-#define kTagNameAddresses              @"addresses"
-#define kTagNameAddress                @"address"
 #define kTagNameMedia                  @"media"
 #define kTagNamePermissions            @"permissions"
 #define kTagNameAudio                  @"audio"
@@ -171,11 +194,7 @@
 
 
 // XML attributes and values
-#define kAttributeId                   @"id"
-#define kAttributeType                 @"type"
 #define kAttributeTypeShort            @"t"
-#define kAttributeFrom                 @"from"
-#define kAttributeTo                   @"to"
 #define kAttributeName                 @"name"
 #define kAttributeMaxWidth             @"max-width"
 #define kAttributeMaxHeight            @"max-height"
@@ -190,7 +209,6 @@
 #define kAttributeAsk                  @"ask"
 #define kAttributeExt                  @"ext"
 #define kAttributeCode                 @"code"
-#define kAttributeStamp                @"stamp"
 #define kAttributeVar                  @"var"
 #define kAttributeXMLNS_STREAM         @"xmlns:stream"
 #define kAttributeLabel                @"label"
@@ -206,6 +224,7 @@
 #define kAttributeProfile              @"profile"
 #define kAttributeSize                 @"size"
 #define kAttributeHeight               @"height"
+#define kAttributeDuration             @"duration"
 #define kAttributeClear                @"clear"
 #define kAttributeWidth                @"width"
 #define kAttributeFormat               @"format"
@@ -240,11 +259,8 @@
 #define kAttributeUcid                 @"ucid"
 
 #define kTypeAltFrom                   @"altFrom"
+#define kTypeAltTo                     @"altTo"
 
-#define kValueGet                      @"get"
-#define kValueSet                      @"set"
-#define kValueResult                   @"result"
-#define kValueError                    @"error"
 #define kValueProbe                    @"probe"
 #define kValueSubscribe                @"subscribe"
 #define kValueSubscribed               @"subscribed"
@@ -286,7 +302,6 @@
 #define kValueStreams                  @"http://etherx.jabber.org/streams"
 #define kValueProtocolProfileURL       @"http://jabber.org/protocol/profile"
 #define kValueProtocolOffline          @"http://jabber.org/protocol/offline"
-#define kValueProtocolSearch           @"http://jabber.org/protocol/rsm"
 #define kValueProtocolAddress          @"http://jabber.org/protocol/address"
 
 
@@ -334,19 +349,19 @@
 #define kCapabilityVideoIM             @"video-im"
 #define kCapabilityIMAck               @"im-ack"
 #define kCapabilityLiveChat            @"livechat-v1"
+#define kCapabilityVideoChat           @"videochat-v1"
+#define kCapabilityHistorySync         @"history-v1"
 
 #define kValueIPHONE                   @"IPHONE"
 #define kValueApple                    @"Apple"
 
-#define kValueAccept                   @"accept"
-#define kValueCancel                   @"cancel"
-#define kValueAdd                      @"add"
-#define kValueWait                     @"wait"
-#define kValueModify                   @"modify"
-#define kValueAuth                     @"auth"
-
 #define kValueFalse                    @"false"
 #define kValueTrue                     @"true"
+
+#define kValueEnabled                  @"enabled"
+#define kValueDisabled                 @"disabled"
+#define kValuePending                  @"pending"
+#define kValueIneligible               @"ineligible"
 
 #define kValueXMPPStanzasNS            @"urn:ietf:params:xml:ns:xmpp-stanzas"
 
@@ -374,6 +389,7 @@
 #define kValueCountryDialingCodeType        @"0"
 #define kValueMobileCountryCodeType         @"2"
 
+#define kValueUrnXmppPing                @"urn:xmpp:ping"
 #define kValueUrnXmppReceipts            @"urn:xmpp:receipts"
 
 #define kValueKilled                     @"killed"
@@ -386,5 +402,10 @@
 #define kAttributeRequired             @"required"
 
 #define kConCheckServer               @"concheck.%@:%d"
-#define kXmppGroupChatServer          @"groupchat"
 #define kXmppAvatarServer             @"avatar"
+
+#define kValueVideoChat               @"video-chat"
+#define kValueInitiator               @"initiator"
+#define kValueResponder               @"responder"
+
+

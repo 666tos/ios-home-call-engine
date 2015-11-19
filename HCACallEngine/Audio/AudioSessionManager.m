@@ -8,9 +8,6 @@
 
 #import "AudioSessionManager.h"
 
-#import <HomeCenterXMPP/DDLog.h>
-#import <HomeCenterXMPP/DDASLLogger.h>
-
 #import <AudioToolbox/AudioToolbox.h>
 
 //#import "AudioSessionInterruptionNotification.h"
@@ -19,6 +16,12 @@
 #import "CompilerUtils.h"
 //#import "iOBackendAPI.h"
 #import "DeviceUtils.h"
+
+#if !__has_feature(objc_arc) 
+#error "ARC is required" 
+#endif
+
+@import HomeCenterXMPP;
 
 #ifdef DEBUG
 static const int ddLogLevel = LOG_LEVEL_VERBOSE;

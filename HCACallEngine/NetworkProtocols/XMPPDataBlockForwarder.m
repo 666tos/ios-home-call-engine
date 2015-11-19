@@ -11,6 +11,10 @@
 #import "Common.h"
 #import "XMPPStrings.h"
 
+#if !__has_feature(objc_arc)
+#error "ARC is required" 
+#endif
+
 @interface XMPPDataBlockForwarder ()
 
 /**

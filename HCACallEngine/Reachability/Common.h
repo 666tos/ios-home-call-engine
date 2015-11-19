@@ -26,6 +26,7 @@ typedef enum
     BACKGROUNDMODE,
     LINPHONE,
     INAPPPURCHASE,
+    MEDIAENGINE,
     // You can add more log components, before LOG_COMPONENTS_COUNT.
     LOG_COMPONENTS_COUNT
 } LogComponent;

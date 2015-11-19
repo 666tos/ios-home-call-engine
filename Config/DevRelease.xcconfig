@@ -1,0 +1,16 @@
+//
+//  DevRelease.xcconfig
+//  HomeCenter
+//
+//  Created by Maxim Malyhin on 6/10/15.
+//  Copyright (c) 2015 NGTI. All rights reserved.
+//
+
+#include "../../../Config/AppDevRelease.xcconfig"
+
+BUNDLE_ID = '$(APP_BUNDLE_PREFIX)'.HCACallEngine
+
+//Defining macroses available from code
+BUNDLE_ID_DEFINE = BUNDLE_ID='@"$(BUNDLE_ID)"'
+
+GCC_PREPROCESSOR_DEFINITIONS = $(APP_GCC_PREPROCESSOR_DEFINITIONS) $(BUNDLE_ID_DEFINE) $(inherited)

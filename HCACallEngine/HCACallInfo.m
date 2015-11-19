@@ -10,7 +10,11 @@
 
 #import "JinglePhone.h"
 
-#import <HomeCenterXMPP/XMPPJID.h>
+@import HomeCenterXMPP;
+
+#if !__has_feature(objc_arc)
+#error "ARC is required"
+#endif
 
 @implementation HCACallInfo
 

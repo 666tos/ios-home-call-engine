@@ -25,10 +25,14 @@
 
 #import "Network.h"
 #import "ReachabilityMonitor.h"
-#import <HomeCenterXMPP/HCXTypesAndConstants.h>
 
 #import "SoundPlayer.h"
 
+@import HomeCenterXMPP;
+
+#if !__has_feature(objc_arc)
+#error "ARC is required"
+#endif
 
 #ifdef DEBUG
 static const int ddLogLevel = LOG_LEVEL_VERBOSE;
@@ -120,11 +124,10 @@ static NSTimeInterval kHCACallResetToIdleTimeout = 1;
             self.relayProtocol.xmppController = xmppController;
             
             _jinglePhone = [[JinglePhone alloc] initWithJingleProtocol:self.jingleProtocol
-                                                                 withRelayProtocol:self.relayProtocol
-                                                             withForwardedProtocol:nil
-                                                                   withVoiceEngine:self.mediaEngine
-                                                                       withUseSrtp:YES
-                                                                      withListener:self];
+                                                     withRelayProtocol:self.relayProtocol
+                                                       withVoiceEngine:self.mediaEngine
+                                                           withUseSrtp:YES
+                                                          withListener:self];
             
             [self.xmppController.xmppStream addDelegate:self delegateQueue:dispatch_get_main_queue()];
             
@@ -475,6 +478,11 @@ static NSTimeInterval kHCACallResetToIdleTimeout = 1;
     }
     
     [self.activeCallMediaContentController setLoudSpeakerEnabled:NO];
+}
+
+- (void)handleVideoSizeChangedOnCallWithID:(NSInteger)callID width:(NSInteger)width height:(NSInteger)height
+{
+    
 }
 
 #pragma mark - Other incoming calls processing

@@ -41,8 +41,3 @@ static NSString * const kHCACallEngineBundleId = @"com.ngti.HCACallEngine";
 
 #import <HCACallEngine/HCACallJingleCantroller.h>
 #import <HCACallEngine/HCACallControllerStatesDescription.h>
-
-//Unit testing support
-#import <HCACallEngine/TestVoiceEngine.h>
-#import <HCACallEngine/HCATestXMPPDataBlockDispatcher.h>
-

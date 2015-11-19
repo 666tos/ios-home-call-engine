@@ -11,11 +11,11 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <HomeCenterXMPP/HomeCenterXMPP.h>
 
 #import "HCACallMediaContentController.h"
-
 #import "HCACallInfo.h"
+
+@import HomeCenterXMPP;
 
 @class HCACallJingleCantroller;
 
